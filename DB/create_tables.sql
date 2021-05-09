@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS login (
+	id SERIAL PRIMARY KEY,
+	hash TEXT ,
+	email TEXT,
+);
+CREATE TABLE IF NOT EXISTS users (
+	id SERIAL PRIMARY KEY,
+	name TEXT ,
+	email TEXT,
+  picture TEXT
+);
