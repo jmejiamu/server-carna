@@ -20,6 +20,11 @@ const signin = require('./controllers/signin');
 const validinfo = require('./middlewares/validinfo');
 const authorization = require('./middlewares/authorization');
 
+// Routes
+const postEnglish = require('./routes/post');
+const getEnglish = require('./routes/gets');
+const deleteEnglish = require('./routes/delete');
+const updateEnglish = require('./routes/update');
 
 // Config DB connection
 const db = knex({
@@ -31,6 +36,23 @@ const db = knex({
         database: process.env.DATABASE,
     }
 });
+
+app.post('/newenglish', (req, res) => {
+    postEnglish.addContentEnglish(req, res, db);
+});
+
+app.get('/allenglish', (req, res) => {
+    getEnglish.showEnglishContent(req, res, db);
+})
+
+app.delete('/delenglish/:content_id', (req, res) => {
+    deleteEnglish.deleteEnglish(req, res, db);
+})
+
+app.put('/updateenglish/:content_id', (req, res) => {
+    updateEnglish.updateEnglish(req, res, db);
+});
+
 
 app.post('/register', validinfo, async (req, res) => {
 

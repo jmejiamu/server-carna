@@ -10,3 +10,15 @@ CREATE TABLE IF NOT EXISTS users (
 	email TEXT,
   picture TEXT
 );
+
+CREATE TABLE IF NOT EXISTS english (
+	id SERIAL PRIMARY KEY,
+	title TEXT ,
+	content TEXT
+);
+
+CREATE TABLE IF NOT EXISTS spanish (
+	id SERIAL PRIMARY KEY,
+	title TEXT ,
+	content TEXT
+);
