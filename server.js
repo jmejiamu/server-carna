@@ -9,7 +9,16 @@ const bcrypt = require('bcrypt');
 dotenv.config()
 
 const app = express();
+app.use(express.json())
 app.use(cors());
+
+// Register and Sign in
+const register = require('./controllers/register');
+const signin = require('./controllers/signin');
+
+//middleware
+const validinfo = require('./middlewares/validinfo');
+const authorization = require('./middlewares/authorization');
 
 
 // Config DB connection
@@ -24,8 +33,8 @@ const db = knex({
 });
 
 app.post('/register', validinfo, async (req, res) => {
-    const { email } = req.body;
 
+    const { email } = req.body;
     try {
         const userExist = await db.select('email').from('login').where({ email: email })
 
