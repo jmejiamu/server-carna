@@ -45,6 +45,10 @@ app.get('/allenglish', (req, res) => {
     getEnglish.showEnglishContent(req, res, db);
 })
 
+app.get('/onelecture/:content_id', (req, res) => {
+    getEnglish.showIndividualEnglishContent(req, res, db);
+})
+
 app.delete('/delenglish/:content_id', (req, res) => {
     deleteEnglish.deleteEnglish(req, res, db);
 })
