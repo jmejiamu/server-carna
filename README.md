@@ -3,9 +3,9 @@
 ### Instruction
 #### Clone the repo - 
 ```
-   git clone https://github.com/jmejiamu/back-end-products.git
+   git clone https://github.com/jmejiamu/server-carna.git
 
-   cd to /back-end-products/server and do npm i to install all the dependencies
+   cd to /server-carna/server and do npm i to install all the dependencies
 
 ```
 
@@ -41,7 +41,7 @@
 ```
 
 #### Technologies used
-* Node
+* NodeJS
 * Express
 * Knexjs
 * PostgreSQL
