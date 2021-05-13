@@ -44,3 +44,4 @@
 * Express
 * Knexjs
 * PostgreSQL
+* JWT
